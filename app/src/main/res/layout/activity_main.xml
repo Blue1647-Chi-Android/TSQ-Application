@@ -1,0 +1,506 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#da1d1f21">
+
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/topThemeBar"
+        android:background="#da454749">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed"
+            android:text="@string/dummy_ticker_name"
+            android:id="@+id/topBarCompanyName"
+            android:singleLine="true"
+            android:textColor="@android:color/white"
+            android:textSize="40dp"
+            android:padding="15dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dummy_number_value"
+            android:fontFamily="sans-serif-condensed"
+            android:id="@+id/topThemeBarPerChange"
+            android:textSize="35dp"
+            android:padding="9dp"
+            android:layout_marginRight="20dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/percentage_shape"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dummy_number_value"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_marginRight="10dp"
+            android:id="@+id/topThemeBarSecurityCost"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/topThemeBarPerChange"
+            android:textColor="@android:color/white"
+            android:textSize="35dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/no_internet_connection_view"
+        android:visibility="gone"
+        android:layout_marginTop="45dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/topThemeBar">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/no_internet_icon"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:adjustViewBounds="true"
+            android:background="@drawable/thunder_cloud" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="No Internet Connection!"
+            android:fontFamily="sans-serif-condensed"
+            android:id="@+id/failed_internet_connection"
+            android:layout_below="@+id/no_internet_icon"
+            android:layout_centerHorizontal="true"
+            android:textSize="25dp"
+            android:textColor="@android:color/white" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/topThemeBar"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/stock_info_container"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dummy_company_name"
+            android:fontFamily="courier"
+            android:id="@+id/company_name"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:textSize="20dp"
+            android:textColor="@android:color/white"
+            android:paddingBottom="10dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/company_name"
+            android:background="@android:color/white"
+            android:focusableInTouchMode="true"
+            android:id="@+id/company_divider" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/company_divider"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/stock_line_1"
+            android:weightSum="2.1">
+
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:focusableInTouchMode="false">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/stock_des_1"
+                    android:fontFamily="courier"
+                    android:id="@+id/stock_descriptor_1"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true"
+                    android:textColor="#42ffffff"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dummy_number_value"
+                    android:fontFamily="courier"
+                    android:id="@+id/stock_value_1"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:textColor="@android:color/white"
+                    android:textSize="19dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="0.1"/>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/stock_des_2"
+                    android:fontFamily="courier"
+                    android:id="@+id/stock_descriptor_2"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true"
+                    android:textColor="#42ffffff"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dummy_number_value"
+                    android:fontFamily="courier"
+                    android:id="@+id/stock_value_2"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:textColor="@android:color/white"
+                    android:textSize="19dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ff838383"
+            android:layout_below="@+id/stock_line_1"
+            android:id="@+id/stock_line_div_1"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/stock_line_div_1"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/stock_line_2"
+            android:weightSum="2.1">
+
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:focusableInTouchMode="false">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/stock_des_3"
+                    android:fontFamily="courier"
+                    android:id="@+id/stock_descriptor_3"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true"
+                    android:textColor="#42ffffff"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dummy_number_value"
+                    android:fontFamily="courier"
+                    android:id="@+id/stock_value_3"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:textColor="@android:color/white"
+                    android:textSize="19dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="0.1"/>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/stock_des_4"
+                    android:fontFamily="courier"
+                    android:id="@+id/stock_descriptor_4"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true"
+                    android:textColor="#42ffffff"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dummy_number_value"
+                    android:fontFamily="courier"
+                    android:id="@+id/stock_value_4"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:textColor="@android:color/white"
+                    android:textSize="19dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ff838383"
+            android:layout_below="@+id/stock_line_2"
+            android:id="@+id/stock_line_div_2"/>
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/stock_line_div_2"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/stock_line_3"
+            android:weightSum="2.1">
+
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:focusableInTouchMode="false">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/stock_des_5"
+                    android:fontFamily="courier"
+                    android:id="@+id/stock_descriptor_5"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true"
+                    android:textColor="#42ffffff"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dummy_number_value"
+                    android:fontFamily="courier"
+                    android:id="@+id/stock_value_5"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:textColor="@android:color/white"
+                    android:textSize="19dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="0.1"/>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/stock_des_6"
+                    android:fontFamily="courier"
+                    android:id="@+id/stock_descriptor_6"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true"
+                    android:textColor="#42ffffff"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dummy_number_value"
+                    android:fontFamily="courier"
+                    android:id="@+id/stock_value_6"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:textColor="@android:color/white"
+                    android:textSize="19dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ff838383"
+            android:layout_below="@+id/stock_line_3"
+            android:id="@+id/stock_line_div_3"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/stock_line_div_3"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/stock_line_4"
+            android:weightSum="2.1">
+
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:focusableInTouchMode="false">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/stock_des_7"
+                    android:fontFamily="courier"
+                    android:id="@+id/stock_descriptor_7"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true"
+                    android:textColor="#42ffffff"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:fontFamily="courier"
+                    android:id="@+id/stock_value_7"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:textColor="@android:color/white"
+                    android:textSize="19dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="0.1"/>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/stock_des_8"
+                    android:fontFamily="courier"
+                    android:id="@+id/stock_descriptor_8"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true"
+                    android:textColor="#42ffffff"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dummy_number_value"
+                    android:fontFamily="courier"
+                    android:id="@+id/stock_value_8"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:textColor="@android:color/white"
+                    android:textSize="19dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/stock_line_4"
+            android:background="@android:color/white"
+            android:focusableInTouchMode="true"
+            android:id="@+id/company_divider2" />
+
+
+
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/stock_info_container"
+        android:layout_alignParentEnd="true"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/refresh_btn"
+            android:id="@+id/stock_refresh_btn"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:textSize="23dp"
+            android:clickable="true"
+            android:fontFamily="sans-serif-condensed"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/refresh_selector"/>
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/connection_progress_bar"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="41dp" />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

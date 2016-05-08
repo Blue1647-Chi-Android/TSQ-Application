@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">StockInfo</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- All the dummy data resources for our application -->
+    <string name="dummy_ticker_name">TSQ</string>
+    <string name="dummy_number_value">0.00</string>
+
+    <!-- Considering that the company name is "Townsquare Media, Inc.",
+         we use this ad the default -->
+    <string name="dummy_company_name">Townsquare Media, Inc.</string>
+
+    <!-- Other app str resources -->
+    <string name="refresh_btn">Refresh</string>
+
+    <!-- Stock info descriptors -->
+    <string name="stock_des_1">OPEN</string>
+    <string name="stock_des_2">MKT CAP</string>
+    <string name="stock_des_3">HIGH</string>
+    <string name="stock_des_4">LOW</string>
+    <string name="stock_des_5">YR HIGH</string>
+    <string name="stock_des_6">YR LOW</string>
+    <string name="stock_des_7">VOL</string>
+    <string name="stock_des_8">PER CH</string>
+    <string name="http_err_message">Http error:  could not connect to web. Response code:</string>
+    <string name="http_err_title">Oops!</string>
+</resources>
